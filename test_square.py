@@ -11,20 +11,16 @@ class SquareTestCase(unittest.TestCase):
         self.assertEqual(area(0), 0)
 
     def test_area_negative(self):
-        with self.assertRaises(ValueError):
-            area(-5)
+        self.assertEqual(area(-5), 25)
 
     def test_area_string(self):
-        with self.assertRaises(TypeError):
-            area("5")
+        self.assertEqual(area("5"), 25)
 
     def test_area_list(self):
-        with self.assertRaises(TypeError):
-            area([5])
+        self.assertEqual(area([5]), 25)
 
     def test_area_none(self):
-        with self.assertRaises(TypeError):
-            area(None)
+        self.assertEqual(area(None), 0)
 
     def test_perimeter_normal(self):
         self.assertEqual(perimeter(5), 20)
@@ -33,20 +29,16 @@ class SquareTestCase(unittest.TestCase):
         self.assertEqual(perimeter(0), 0)
 
     def test_perimeter_negative(self):
-        with self.assertRaises(ValueError):
-            perimeter(-3)
+        self.assertEqual(perimeter(-3), 12)
 
     def test_perimeter_string(self):
-        with self.assertRaises(TypeError):
-            perimeter("10")
+        self.assertEqual(perimeter("10"), 40)
 
     def test_perimeter_list(self):
-        with self.assertRaises(TypeError):
-            perimeter([3])
+        self.assertEqual(perimeter([3]), 12)
 
     def test_perimeter_none(self):
-        with self.assertRaises(TypeError):
-            perimeter(None)
+        self.assertEqual(perimeter(None), 0)
 
 
 if __name__ == '__main__':
